@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: jays-tattoos
+    env: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: PORT
+        value: 3000
+      - key: TWILIO_ACCOUNT_SID
+        sync: false
+      - key: TWILIO_AUTH_TOKEN
+        sync: false
+      - key: TWILIO_PHONE_NUMBER
+        sync: false
+      - key: ARTIST_PHONE_NUMBER
+        sync: false
+      - key: ADMIN_USERNAME
+        value: admin
+      - key: ADMIN_PASSWORD_HASH
+        value: $2a$10$N9qo8uLOickgx2ZMRZoMye3DmJbNZPjyHBmP5nqK6bvLtLEPxDl4G
+      - key: JWT_SECRET
+        value: jays-tattoos-secret-key-change-this-in-production-2025
